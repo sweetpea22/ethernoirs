@@ -16,7 +16,6 @@ export const networkConfig: networkConfigInfo = {
 export const developmentChains = ["hardhat", "localhost"]
 
 // 721 VALUES 
-
 export const tokenName = "Accused Main Characters"
 
 export const tokenSymbol = "ACCU"

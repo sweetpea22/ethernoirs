@@ -30,6 +30,18 @@ const config: HardhatUserConfig = {
       gasPrice: 225000000000,
       chainId: 5,
     },
+    chiado: {
+      url: "https://rpc.chiadochain.net",
+      gasPrice: 1000000000,
+      accounts: [PRIVATE_KEY],
+      chainId: 10200,
+    },
+    scrollSepolia: {
+      url: "https://rpc.ankr.com/scroll_sepolia_testnet",
+      gasPrice: 1000000000,
+      accounts: [PRIVATE_KEY],
+      chainId: 10200,
+    },
   },
   solidity: {
     version: '0.8.18',
