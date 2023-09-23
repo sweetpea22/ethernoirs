@@ -7,18 +7,7 @@ import '@openzeppelin/contracts/access/Ownable.sol';
 import '@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol';
 
 
-// contract is meant to do 3 things
-// register each player
-// register each player's move and score 
-
-// owner sets the round name when a new chapter comes out 
-// owner changes the status of the round to active
-
-// mint 1155s for the nfts that play ? 
-
-
-
-contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
+contract Logic is ERC1155, Ownable, ERC1155Supply {
   string public baseURI; // baseURI where token metadata is stored
   uint256 public totalSupply; // Total number of tokens minted
  
@@ -54,7 +43,7 @@ contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
   Game[] public Games; // Array of Games
 
   function isPlayer(address addr) public view returns (bool) {
-    if(playes[addr] == 0) {
+    if(players[addr] == 0) {
       return false;
     } else {
       return true;
@@ -116,11 +105,14 @@ contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
     players.push(Player(address(0), 0, false));
   }
 
+"players[3-1] = 0xfdsfdsfs..."
+
   /// @dev Registers a player
   /// @param _name player name; set by player
   function registerPlayer(address memory _addr) external {
     require(!isPlayer(msg.sender), "Player already registered"); // Require that player is not already registered
     
+    // the index of the player == the # of the player at signup.
     uint256 _id = players.length;
     players.push(Player(msg.sender, 0, false)); // Adds player to players array
     playerInfo[msg.sender] = _id; // Creates player info mapping
@@ -156,12 +148,12 @@ contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
 
   function _registerPlayerMove(uint256 _player, uint8 _choice, string memory _gameName) internal {
     require(_choice == 1 || _choice == 2, "Choice should be either 1 or 2!");
-    require(_choice == 1 ? getPlayer(msg.sender).playerMana >= 3 : true, "Mana not sufficient for attacking!");
-    battles[gameInfo[_gameName]].moves[_player] = _choice;
+    // hmm...notsure that this would work.
+    games[gameInfo].moves[_player] = _choice;
   }
 
   // User chooses attack or defense move for battle card
-  function attackOrDefendChoice(uint8 _choice, string memory _gameName) external {
+  function userChoice(uint8 _choice, string memory _gameName) external {
     Game memory _game = getGame(_gameName);
 
     require(
@@ -184,54 +176,48 @@ contract AVAXGods is ERC1155, Ownable, ERC1155Supply {
     _game = getGame(_gameName);
 
     //optional: can think of how many moves in the game are left.
-    uint _movesLeft = 2 - (_game.moves[0] == 0 ? 0 : 1) - (_game.moves[1] == 0 ? 0 : 1);
-    emit GameMove(_gameName, _movesLeft == 1 ? true : false);
+    // uint _movesLeft = 2 - (_game.moves[0] == 0 ? 0 : 1) - (_game.moves[1] == 0 ? 0 : 1);
+    // emit GameMove(_gameName, _movesLeft == 1 ? true : false);
     
-    if(_movesLeft == 0) {
-      _awaitGameResult(_gameName);
-    }
+    // if(_movesLeft == 0) {
+    //   _awaitGameResult(_gameName);
+    // }
   }
 
   // Awaits battle results
-  function _awaitGameResult(string memory _gameName) internal {
-    Game memory _game = getGame(_gameName);
+  // function _awaitGameResult(string memory _gameName) internal {
+  //   Game memory _game = getGame(_gameName);
 
-    _resolveGame(_battle);
-  }
-
-  struct P {
-    uint index;
-    uint move;
-    uint health;
-  }
+  //   _resolveGame(_battle);
+  // }
 
   /// @dev This function resets the game
-  function _resolveGame(Game memory _gameinternal) {
+  // function _resolveGame(Game memory _gameinternal) {
     
-    // Reset moves to 0
-    _game.moves[0] = 0;
-    updateGame(_game.name, _game);
+  //   // Reset moves to 0
+  //   _game.moves[0] = 0;
+  //   updateGame(_game.name, _game);
 
   }
 
 // reset when done
-  function endGame(address gameEnder, Game memory _game) internal returns (Game memory) {
-    require(_game.gameStatus != GameStatus.ENDED, "Game already ended"); // Require that game has not ended
+  // function endGame(address gameEnder, Game memory _game) internal returns (Game memory) {
+  //   require(_game.gameStatus != GameStatus.ENDED, "Game already ended"); // Require that game has not ended
 
-    _game.gameStatus = GameStatus.ENDED;
-    _game.solvedBy = gameEnder;
-    updateGame(_game.name, _game);
+  //   _game.gameStatus = GameStatus.ENDED;
+  //   _game.solvedBy = gameEnder;
+  //   updateGame(_game.name, _game);
 
-    uint player = playerInfo[_game.players[0]];
+  //   uint player = playerInfo[_game.players[0]];
   
 
-    players[player].isInActiveGame = false;
-    players[player].playerHealth = 10;
+  //   players[player].isInActiveGame = false;
+  //   players[player].playerHealth = 10;
 
-    emit GameSolved(_game.name); // Emits GameSolved event
+  //   emit GameSolved(_game.name); // Emits GameSolved event
 
-    return _game;
-  }
+  //   return _game;
+  // }
 
   // Turns uint256 into string
   function uintToStr(uint256 _i) internal pure returns (string memory _uintAsString) {
