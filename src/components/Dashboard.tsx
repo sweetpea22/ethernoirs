@@ -32,12 +32,12 @@ export default function Dashboard({ children }: any) {
   return (
     <>
       <div className='min-h-full'>
-        <div className='bg-gray-800 pb-32'>
+        <div className='ripped-bg bg-contain pb-32'>
           <Disclosure as='nav' className='bg-gray-800'>
             {({ open }) => (
               <>
                 <div className='mx-auto max-w-7xl sm:px-6 lg:px-8'>
-                  <div className='border-b border-gray-700'>
+                  <div className='border-b border-gray-800'>
                     <div className='flex h-16 items-center justify-between px-4 sm:px-0'>
                       <div className='flex items-center'>
                         <div className='flex-shrink-0'>
@@ -88,7 +88,7 @@ export default function Dashboard({ children }: any) {
         {/* Controls the window container */}
         <main className='-mt-32'>
           <div className='mx-auto max-w-7xl'>
-            <div className='rounded-lg bg-gray-500 px-2 py-2 shadow sm:px-2 grid mx-4'>
+            <div className='rounded-lg bg-[#0f0f0f] px-2 py-2 shadow sm:px-2 grid mx-4'>
               {children}
             </div>
           </div>

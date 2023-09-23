@@ -1,6 +1,7 @@
 // yes
 import Dashboard from '@/components/Dashboard';
 import GameInterface from '@/components/GameInterface';
+import SceneInterface from '@/components/SceneInterface';
 
 export interface GameMove {
   name: string;
@@ -17,12 +18,7 @@ export default function FourtyTwo() {
   ];
   return (
     <Dashboard>
-      <GameInterface
-        choiceOptions={choiceOptions}
-        characterImgUrl='/guy-3.png'
-        characterName='42'
-        dialogue={'Hello from 42'}
-      />
+      <SceneInterface description="Zach, the tech lead at Lanny was murdered. But the situation is much worse than it initially seemed. Lanny's CTO hired blackouts to hack his own employees when they threatened to leave the protocol. Now those blackouts continue to blackmail the CTO. So he hires you to solve the murder, but you plan to expose the corruption and clean out the protocol." href="/42" />
     </Dashboard>
   );
 }
