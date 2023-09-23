@@ -8,7 +8,7 @@ export interface GameMove {
 }
 
 export default function ThirtyEight() {
-  const choiceOptions: GameMove[] = [{ name: 'Record that', to: '/72' }];
+  const choiceOptions: GameMove[] = [{ name: 'Record that', to: '/729' }];
   return (
     <Dashboard>
       <GameInterface

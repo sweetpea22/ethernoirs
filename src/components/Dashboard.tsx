@@ -1,15 +1,12 @@
 'use client';
-import { Fragment, ReactComponentElement, ReactElement } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Disclosure } from '@headlessui/react';
 import { Web3Button } from '@web3modal/react';
 
-
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
   { name: 'Leaderboard', href: '#', current: false },
   { name: 'Mint POAP', href: '#', current: false },
   { name: 'Project Info', href: '#', current: false },
+  { name: 'Reset', href: '/', current: true },
 ];
 
 //@ts-ignore

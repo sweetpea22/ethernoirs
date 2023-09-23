@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { letterVariant, sentenceVariant } from '@/styles/animations';
 import CustomBtn from './CustomBtn';
 import { GameMove } from '@/pages';
+import Link from 'next/link';
 
 export default function GameInterface({
   characterImgUrl,
@@ -47,13 +48,14 @@ export default function GameInterface({
         <h3 className='py-4 text-3xl text-white'>Take action(s), anon</h3>
         <div className='flex flex-col gap-x-4 my-6'>
           {choiceOptions.map((choice: GameMove, index: number) => (
-            <button
+            <Link
               type='button'
-              className='relative inline-flex items-center 
+              href={`/${choice.to}`}
+              className='relative inline-flex items-center
               max-w-[80%] rounded-lg bg-red-900 px-8 py-4 my-3 text-xl font-semibold text-gray-200 ring-1 ring-inset ring-red-00 hover:bg-red-800 focus:z-10'
               key={index}>
               {choice.name}
-            </button>
+            </Link>
           ))}
         </div>
         <div className='h-[30%] flex justify-start items-end gap-x-5 '>

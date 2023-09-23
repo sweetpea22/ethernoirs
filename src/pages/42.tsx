@@ -9,8 +9,8 @@ export interface GameMove {
 
 export default function FourtyTwo() {
   const choiceOptions: GameMove[] = [
-    { name: 'Flee', to: '/38' },
-    { name: 'Fire your gun', to: '/83' },
+    { name: 'Flee', to: '/83' },
+    { name: 'Fire your gun', to: '/38' },
   ];
   return (
     <Dashboard>
