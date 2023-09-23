@@ -1,5 +1,5 @@
-import Dashboard from './components/Dashboard';
-import GameInterface from './components/GameInterface';
+import Dashboard from '../components/Dashboard';
+import GameInterface from '../components/GameInterface';
 
 export interface GameMove {
   name: string;
