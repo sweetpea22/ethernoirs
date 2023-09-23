@@ -7,7 +7,7 @@ export interface GameMove {
   number?: number;
 }
 // ZKP 1 try
-export default function SeventyTwo() {
+export default function SeventyFour() {
   const choiceOptions: GameMove[] = [];
   return (
     <Dashboard>

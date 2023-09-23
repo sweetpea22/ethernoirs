@@ -17,10 +17,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/66.js"
     ],
-    "/99": [
+    "/729": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/99.js"
+      "static/chunks/pages/729.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

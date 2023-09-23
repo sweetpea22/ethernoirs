@@ -9,17 +9,17 @@ export interface GameMove {
 
 export default function Sixty() {
   const choiceOptions: GameMove[] = [
-    { name: 'Trust Biddy, record location', to: '99' },
+    { name: 'Trust Payne, record location', to: '99' },
     { name: "Don't trust, shoot Dylan", to: '111' },
   ];
   return (
     <Dashboard>
       <GameInterface
         choiceOptions={choiceOptions}
-        characterImgUrl='/thaler.png'
-        characterName='Thaler'
+        characterImgUrl='/payne.png'
+        characterName='Max Payne'
         dialogue={
-          'Dylan smiles and takes you to a cage fight. The fighter is a disgraced protocol founder now fighting to buy his freedom from Dylan. He took you there to threaten you. You see Biddy there. He tells you to go with Thaler for info on the murder.'
+          'Dylan smiles and takes you to a cage fight. The fighter is a disgraced protocol founder now fighting to buy his freedom from Dylan. He took you there to threaten you. You meet VC named Max Payne. He urges you to run from Dylan and go with Whisper for info on the murder.'
         }
       />
     </Dashboard>

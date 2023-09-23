@@ -19,7 +19,7 @@ export default function NinetyNine() {
         characterImgUrl='/whisper.png'
         characterName='Whisper'
         dialogue={
-          "Thaler tells you he was in the warehouse the same time I heard him yell “Max” and heard shots immediately after. He couldn't make out who ran away."
+          "Whisper tells you he was in the warehouse the same time I heard him yell “Max” and heard shots immediately after. He couldn't make out who ran away."
         }
       />
     </Dashboard>
