@@ -13,3 +13,10 @@ export default function MintButton() {
     </button>
   );
 }
+
+
+// metadata 1155 
+
+// property 66 -> The friendly swine, 39 Colsom Rd
+// property 38  -> Ian Macswain is Thaler
+//  

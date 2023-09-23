@@ -12,15 +12,35 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/38": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/38.js"
+    ],
     "/42": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/42.js"
     ],
+    "/55": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/55.js"
+    ],
+    "/66": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/66.js"
+    ],
     "/729": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/729.js"
+    ],
+    "/99": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/99.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
