@@ -23,12 +23,16 @@ const pixel1 = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     // use web3modal from safe's sdk
-    <WagmiConfig config={config}>
-      <RainbowKitProvider chains={chains}>
-        <main className={pixel1.className}>
-          <Component {...pageProps} />
-        </main>
-      </RainbowKitProvider>
-    </WagmiConfig>
+    //privy or ens?
+
+    //wagmi config giving me grief
+
+    // <WagmiConfig config={config}>
+    //   <RainbowKitProvider chains={chains}>
+    <main className={pixel1.className}>
+      <Component {...pageProps} />
+    </main>
+    //   </RainbowKitProvider>
+    // </WagmiConfig>
   );
 }
