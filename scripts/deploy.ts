@@ -20,22 +20,39 @@ async function main() {
   ]
 
 
-  const mainChars = await deploy("MainCharacters", {
+  // const mainChars = await deploy("MainCharacters", {
+  // from: deployer,
+  // args: charsArgs,
+  // log: true,
+  // // we need to wait if on a live network so we can verify properly
+  // waitConfirmations: networkConfig[network.name].blockConfirmations || 1,
+  // })
+  
+  // // await mainChars.waitForDeployment();
+
+  // console.log(
+  //   `Deployed main chars at ${mainChars.address}!`
+  // );
+
+  //  if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
+  //   await verify(mainChars.address, [])
+  // }
+
+  const items = await deploy("Items", {
   from: deployer,
-  args: charsArgs,
+  args: [],
   log: true,
   // we need to wait if on a live network so we can verify properly
   waitConfirmations: networkConfig[network.name].blockConfirmations || 1,
   })
   
-  // await mainChars.waitForDeployment();
 
   console.log(
-    `Deployed main chars at ${mainChars.address}!`
+    `Deployed main chars at ${items.address}!`
   );
 
    if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
-    await verify(mainChars.address, [])
+    await verify(items.address, [])
   }
 }
 
