@@ -1,15 +1,11 @@
-// yes
 import Dashboard from '@/components/Dashboard';
 import GameInterface from '@/components/GameInterface';
-import SceneInterface from '@/components/SceneInterface';
 
 export interface GameMove {
   name: string;
   to: string;
   number?: number;
 }
-
-
 
 export default function FourtyTwo() {
   const choiceOptions: GameMove[] = [
