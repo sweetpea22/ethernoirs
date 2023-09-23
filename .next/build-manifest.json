@@ -22,16 +22,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/42.js"
     ],
-    "/69": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/69.js"
-    ],
-    "/99": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/99.js"
-    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
