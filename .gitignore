@@ -28,6 +28,7 @@ deployments
 
 # production
 /build
+/mainchars
 
 # misc
 .DS_Store

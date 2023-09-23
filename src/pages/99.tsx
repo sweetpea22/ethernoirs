@@ -9,8 +9,8 @@ export interface GameMove {
 
 export default function NinetyNine() {
   const choiceOptions: GameMove[] = [
-    { name: 'Suspect Someone', to: '/740' },
-    { name: 'Inspect Proof', to: '/900' },
+    { name: 'Suspect Someone', to: '740' },
+    { name: 'Inspect Proof', to: '900' },
   ];
   return (
     <Dashboard>
