@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { letterVariant, sentenceVariant } from '@/styles/animations';
@@ -5,7 +6,7 @@ import CustomBtn from './CustomBtn';
 import { GameMove } from '@/pages';
 
 export default function GameInterface({
-  characterImgUrl = '/book.png',
+  characterImgUrl,
   characterName = 'Character loading...',
   dialogue = 'Dialogue loading...',
   choiceOptions,
@@ -15,9 +16,13 @@ export default function GameInterface({
   const split = sentenceToSplit.split(' ');
   return (
     <div className='flex'>
-      <div className='mx-auto w-full h-full lg:max-w-1/3 rounded-lg bg-slate-900 px-5 py-6 shadow sm:px-6'>
-        <div className='mx-auto flex items-center justify-center bg-gray-800'>
-          <img src={characterImgUrl} className='w-1/2' />
+      <div className='mx-auto w-full h-full lg:max-w-1/3 rounded-lg bg-[#2a2a2a] px-5 py-6 shadow sm:px-6'>
+        <div className='mx-auto flex items-center justify-center bg-[#0f0f0f]'>
+          {characterImgUrl ? (
+            <img src={characterImgUrl} className='w-1/2' alt='' />
+          ) : (
+            <img src='/clover.png' className='w-1/2' alt='' />
+          )}
         </div>
         <div className='mt-6 text-center sm:mt-5'>
           <h3 className='text-2xl font-semibold leading-6 text-gray-100'>
@@ -45,13 +50,13 @@ export default function GameInterface({
             <button
               type='button'
               className='relative inline-flex items-center 
-              max-w-[80%] rounded-lg bg-red-900 px-8 py-4 my-3 text-xl font-semibold text-gray-200 ring-1 ring-inset ring-red-700 hover:bg-red-800 focus:z-10'
+              max-w-[80%] rounded-lg bg-red-900 px-8 py-4 my-3 text-xl font-semibold text-gray-200 ring-1 ring-inset ring-red-00 hover:bg-red-800 focus:z-10'
               key={index}>
               {choice.name}
             </button>
           ))}
         </div>
-        <div className='h-[50%] flex justify-start items-end gap-x-5 '>
+        <div className='h-[30%] flex justify-start items-end gap-x-5 '>
           <CustomBtn
             name='Inventory'
             imageUrl='/book.png'
@@ -68,6 +73,7 @@ export default function GameInterface({
             imgClassNames='w-[80px]'
           />
           <CustomBtn
+            disabled
             name='History'
             imageUrl='/sheet.png'
             imgClassNames='w-[80px]'

@@ -86,7 +86,7 @@ export default function Home() {
   return (
     <Dashboard>
       <SceneInterface
-        description="Zach, the tech lead at Lanny was murdered. But the situation is much worse than it initially seemed. Lanny's CTO hired blackouts to hack his own employees when they threatened to leave the protocol. Now those blackouts continue to blackmail the CTO. So he hires you to solve the murder, but you plan to expose the corruption and clean out the protocol."
+        description="Zach, the tech lead at Lanny was murdered. But the situation is much worse than it initially seemed. Lanny's CTO hired blackouts to hack his own employees when they threatened to leave the protocol. Now those blackouts continue to blackmail the CTO. So he hires you to solve the murder, but you plan to expose the corruption and clean out the protocol. Your objective: Solve who killed Zach or win by a score of 20."
         href='/42'
       />
     </Dashboard>

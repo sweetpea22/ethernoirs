@@ -4,9 +4,11 @@ export default function CustomBtn({
   classNames,
   name,
   imgClassNames,
+  disabled = false,
 }: any) {
   return (
     <button
+      disabled={disabled}
       className={`relative flex-col items-center hover:brightness-50 ${classNames}`}>
       {' '}
       <img
@@ -14,7 +16,7 @@ export default function CustomBtn({
         className={`min-h-[90px] ${imgClassNames}`}
         alt='icon'
       />
-      <p className='text-lg text-black'>{name}</p>
+      <p className='text-lg text-white'>{name}</p>
     </button>
   );
 }

@@ -13,17 +13,17 @@ export interface GameMove {
 
 export default function FourtyTwo() {
   const choiceOptions: GameMove[] = [
-    { name: 'Accept the tip and spread the rumor.', to: '/4' },
-    { name: 'Put some $ on it.', to: '/3' },
+    { name: 'Flee', to: '/38' },
+    { name: 'Fire your gun', to: '/83' },
   ];
   return (
     <Dashboard>
       <GameInterface
         choiceOptions={choiceOptions}
-        characterImgUrl='/guy-3.png'
-        characterName='Beginning'
+        characterImgUrl='/house.png'
+        characterName='Scene 1: Gonna be a long night...'
         dialogue={
-          "You touch down in Kernel City, it's a dump. First you meet the Lanny protocol VC, his name is Max Payne. You lie and tell him that you're investigating a specific address for laundering. He says he's headed to a UFC fight and tosses you a tip to bet on Zach."
+          "The cops tell you to go to Dylan the CTO's house. They wait back while you try to open the door. Suddenly there are shots and they're not coming from the house, the cops are shooting at you. "
         }
       />
     </Dashboard>
