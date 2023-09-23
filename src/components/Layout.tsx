@@ -3,7 +3,8 @@ import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { Web3Button } from '@web3modal/react';
+
 const navigation = [
   { name: 'Home', href: '/', current: true },
   { name: 'Tournaments', href: '/stream', current: false },
@@ -31,22 +32,14 @@ const RootLayout = ({ children }: any) => {
                     {/* Logo */}
                     <div className='absolute left-0 flex-shrink-0 lg:static'>
                       <a href='#'>
-                        <span className='sr-only'>Your Company</span>
+                        <span className='sr-only'>The accused</span>
                       </a>
                     </div>
 
                     {/* Right section on desktop */}
                     <div className='hidden lg:ml-4 lg:flex lg:items-center lg:pr-0.5'>
-                      <button
-                        type='button'
-                        className='relative flex-shrink-0 rounded-full p-1 text-indigo-200 hover:bg-white hover:bg-opacity-10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'>
-                        <span className='absolute -inset-1.5' />
-                        <span className='sr-only'>View notifications</span>
-                        <BellIcon className='h-6 w-6' aria-hidden='true' />
-                      </button>
-
                       {/* Profile dropdown */}
-                      <ConnectButton />
+                      <Web3Button />
                     </div>
 
                     {/* Search */}
