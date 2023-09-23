@@ -64,23 +64,23 @@ export default function GameInterface({
         </div>
         <div className='h-[50%] flex justify-start items-end gap-x-5 '>
           <CustomBtn
-            name='Fact-check'
+            name='Inventory'
             imageUrl='/book.png'
+            imgClassNames='w-[80px]'
+          />
+          <CustomBtn
+            name='Solve'
+            imageUrl='/env.png'
+            imgClassNames='w-[80px]'
+          />
+          <CustomBtn
+            name='Superusers'
+            imageUrl='/lookup.png'
             imgClassNames='w-[80px]'
           />
           <CustomBtn
             name='History'
             imageUrl='/sheet.png'
-            imgClassNames='w-[80px]'
-          />
-          <CustomBtn
-            name='Recruit'
-            imageUrl='/env.png'
-            imgClassNames='w-[80px]'
-          />
-          <CustomBtn
-            name='Directory'
-            imageUrl='/lookup.png'
             imgClassNames='w-[80px]'
           />
         </div>
