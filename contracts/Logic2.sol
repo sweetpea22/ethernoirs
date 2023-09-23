@@ -35,6 +35,13 @@ contract Logic is ERC1155, Ownable, ERC1155Supply {
     uint8[5] moves; /// @param moves uint array representing players' move
   }
 
+  struct Moves {
+    uint256 id;
+    address madeBy;
+    uint8[5] moves;
+
+  }
+
   mapping(address => uint256) public playerInfo; // Mapping of player addresses to player index in the players array
   Player[] public players; // Array of players
 
@@ -70,18 +77,9 @@ contract Logic is ERC1155, Ownable, ERC1155Supply {
     }
   }
 
-  function getGame(string memory _name) public view returns (Game memory) {
-    require(isGame(_name), "Game doesn't exist!");
-    return games[gameInfo[_name]];
-  }
+  function getMoves(string memory _index) public view returns (Moves memory) {
+    // get currnet player
 
-  function getAllGames() public view returns (Game[] memory) {
-    return games;
-  }
-
-  function updateGame(string memory _name, Game memory _game) private {
-    require(isGame(_name), "Game doesn't exist");
-    games[gameInfo[_name]] = _game;
   }
 
   // Events
@@ -104,8 +102,6 @@ contract Logic is ERC1155, Ownable, ERC1155Supply {
   function initialize() private {
     players.push(Player(address(0), 0, false));
   }
-
-"players[3-1] = 0xfdsfdsfs..."
 
   /// @dev Registers a player
   /// @param _name player name; set by player
@@ -164,10 +160,6 @@ contract Logic is ERC1155, Ownable, ERC1155Supply {
         _game.gameStatus != GameStatus.ENDED,
         "Game has already ended"
     ); // Require that game has not ended
-    require(
-      msg.sender == _game.players[0] || msg.sender == _game.players[1],
-      "You are not in this game"
-    ); // Require that player is in the game
 
     require(_game.moves[_game.players[0] == msg.sender ? 0 : 1] == 0, "You have already made a move!");
 
