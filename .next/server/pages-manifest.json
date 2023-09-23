@@ -2,8 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
   "/42": "pages/42.js",
-  "/test": "pages/test.js",
-  "/66": "pages/66.js"
+  "/superuser": "pages/superuser.js"
 }

@@ -32,10 +32,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/test": [
+    "/superuser": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/test.js"
+      "static/chunks/pages/superuser.js"
     ]
   },
   "ampFirstPages": []
