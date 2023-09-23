@@ -14,8 +14,10 @@ export default function SeventyTwo() {
       <GameInterface
         choiceOptions={choiceOptions}
         characterImgUrl='/dylan.png'
-        characterName='Dylan'
-        dialogue={'Show ZKP'}
+        characterName='You may need to open your notebook to solve the riddle'
+        dialogue={
+          "To prove you solved the riddle, enter the number that corresponds  to the first letter of the color of the killer's in slot 1. Then enter street number he was last seen on. Click the pin icon to enter the answer."
+        }
       />
     </Dashboard>
   );

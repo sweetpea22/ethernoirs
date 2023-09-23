@@ -17,6 +17,6 @@ export default function MintButton() {
 
 // metadata 1155 
 
-// property 66 -> The friendly swine, 39 Colsom Rd
+// property 66 -> The nth position of the alphabet letter of the killers hair + the number on the street you met him at 
 // property 38  -> Ian Macswain is Thaler
-//  
+// 99 inspect proof -> opens the subgraph 

@@ -12,7 +12,7 @@ export default function OneEleven() {
     <Dashboard>
       <SceneInterface
         description='You shot Dylan but at what cost? You barely made it out alive.'
-        href='/69'
+        href='69'
       />
     </Dashboard>
   );
