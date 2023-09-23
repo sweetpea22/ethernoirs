@@ -18,7 +18,14 @@ export default function FourtyTwo() {
   ];
   return (
     <Dashboard>
-      <SceneInterface description="Zach, the tech lead at Lanny was murdered. But the situation is much worse than it initially seemed. Lanny's CTO hired blackouts to hack his own employees when they threatened to leave the protocol. Now those blackouts continue to blackmail the CTO. So he hires you to solve the murder, but you plan to expose the corruption and clean out the protocol." href="/42" />
+      <GameInterface
+        choiceOptions={choiceOptions}
+        characterImgUrl='/guy-3.png'
+        characterName='Beginning'
+        dialogue={
+          "You touch down in Kernel City, it's a dump. First you meet the Lanny protocol VC, his name is Max Payne. You lie and tell him that you're investigating a specific address for laundering. He says he's headed to a UFC fight and tosses you a tip to bet on Zach."
+        }
+      />
     </Dashboard>
   );
 }
