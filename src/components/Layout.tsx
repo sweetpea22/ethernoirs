@@ -39,7 +39,7 @@ const RootLayout = ({ children }: any) => {
                     {/* Right section on desktop */}
                     <div className='hidden lg:ml-4 lg:flex lg:items-center lg:pr-0.5'>
                       {/* Profile dropdown */}
-                      <Web3Button />
+                      <Web3Button balance='show' icon='show' />
                     </div>
 
                     {/* Search */}

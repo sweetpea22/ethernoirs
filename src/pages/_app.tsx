@@ -20,6 +20,7 @@ const chains = [goerli, scrollSepolia, gnosisChiado, mantleTestnet];
 const projectId = '254cd962c673dce7b6230a37d69ad80b';
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
+
 const wagmiConfig = createConfig({
   autoConnect: true,
   connectors: w3mConnectors({ projectId, chains }),
