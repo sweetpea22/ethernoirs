@@ -27,6 +27,7 @@ export default function Home() {
     functionName: 'mintToMulti',
     args: [address, amountToMint],
     value: parseEther('0.01'),
+    gas: 1_000_000n,
   });
 
   const {
@@ -40,9 +41,32 @@ export default function Home() {
     { name: 'Accept the tip and spread the rumor.', to: '/4' },
     { name: 'Put some $ on it.', to: '/3' },
   ];
+
+  if (isSuccess) {
+    return (
+      <Dashboard>
+        <div className='flex flex-col items-center'>
+          <div className='text-2xl font-bold'>Character NFT Minted!</div>
+          <div>Tx hash: {mintCharacterData?.hash}</div>
+        </div>
+        <button className='h-12' disabled={!write} onClick={() => write?.()}>
+          Mint Main Characters
+        </button>
+      </Dashboard>
+    );
+  }
+
+  if (!isConnected) {
+    return (
+      <Dashboard>
+        <h1>Please connect your wallet!</h1>
+      </Dashboard>
+    );
+  }
+
   return (
     <Dashboard>
-      <button className='h-12' onClick={() => write?.()}>
+      <button className='h-12' disabled={!write} onClick={() => write?.()}>
         Mint Main Characters
       </button>
       {/* <GameInterface
