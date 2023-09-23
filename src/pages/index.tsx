@@ -8,7 +8,7 @@ import {
 } from 'wagmi';
 import { charsAddress } from '@/contracts';
 import charsAbi from '@/contracts/abi.json';
-import { parseEther } from 'viem';
+import { parseEther, parseGwei } from 'viem';
 import { useState } from 'react';
 
 export interface GameMove {
@@ -19,55 +19,48 @@ export interface GameMove {
 
 export default function Home() {
   const { address, isConnected } = useAccount();
+  const newBaseUri = 'ipfs://QmVWpT2f3PyZvuVkH8zQB8ahy6TaDFYBYWQcTUHpMuho3v/';
   const [amountToMint, setAmountToMint] = useState(6);
 
   const { config } = usePrepareContractWrite({
     address: charsAddress as `0x${string}`,
     abi: charsAbi.abi,
-    functionName: 'mintToMulti',
-    args: [address, amountToMint],
-    value: parseEther('0.01'),
+    functionName: 'setBaseURI',
+    args: [newBaseUri],
     gas: 1_000_000n,
+    gasPrice: parseGwei('70'),
   });
 
   const {
-    data: mintCharacterData,
+    data: setUri,
     isLoading,
     isSuccess,
     write,
   } = useContractWrite(config);
+
+  console.log(setUri);
+
+  const { data: mintCharTokenUri, isLoading: tokenUriLoading } =
+    useContractRead({
+      address: charsAddress as `0x${string}`,
+      abi: charsAbi.abi,
+      functionName: 'tokenURI',
+      args: ['1'],
+    });
+
+  console.log(mintCharTokenUri);
 
   const choiceOptions: GameMove[] = [
     { name: 'Accept the tip and spread the rumor.', to: '/4' },
     { name: 'Put some $ on it.', to: '/3' },
   ];
 
-  if (isSuccess) {
-    return (
-      <Dashboard>
-        <div className='flex flex-col items-center'>
-          <div className='text-2xl font-bold'>Character NFT Minted!</div>
-          <div>Tx hash: {mintCharacterData?.hash}</div>
-        </div>
-        <button className='h-12' disabled={!write} onClick={() => write?.()}>
-          Mint Main Characters
-        </button>
-      </Dashboard>
-    );
-  }
-
-  if (!isConnected) {
-    return (
-      <Dashboard>
-        <h1>Please connect your wallet!</h1>
-      </Dashboard>
-    );
-  }
-
   return (
     <Dashboard>
-      <button className='h-12' disabled={!write} onClick={() => write?.()}>
-        Mint Main Characters
+      <button
+        className='px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 duration-100 cursor-pointers'
+        onClick={() => write?.()}>
+        Set new uri
       </button>
       {/* <GameInterface
         choiceOptions={choiceOptions}
