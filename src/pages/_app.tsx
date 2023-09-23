@@ -42,6 +42,20 @@ const pixel1 = localFont({
     },
   ],
 });
+const neuebit = localFont({
+  src: [
+    {
+      path: './fonts/neuebit/NeueBit-Bold.ttf',
+      weight: '600',
+      style: 'bold',
+    },
+    {
+      path: './fonts/neuebit/NeueBit-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
