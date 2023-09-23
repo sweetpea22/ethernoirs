@@ -44,7 +44,7 @@ export default function GameInterface({
         </div>
       </div>
       <div className='mx-auto flex-col items-center w-full lg:max-w-1/3 h-full px-4 py-5'>
-        <h3 className='py-4 text-3xl text-black'>Choose an action, anon:</h3>
+        <h3 className='py-4 text-3xl text-white'>Take action(s), anon</h3>
         <div className='flex flex-col gap-x-4 my-6'>
           {choiceOptions.map((choice: GameMove, index: number) => (
             <button
@@ -64,7 +64,7 @@ export default function GameInterface({
           />
           <CustomBtn
             name='Solve'
-            imageUrl='/env.png'
+            imageUrl='/pin.png'
             imgClassNames='w-[80px]'
           />
           <CustomBtn

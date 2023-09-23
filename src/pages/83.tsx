@@ -7,7 +7,7 @@ export interface GameMove {
   number?: number;
 }
 
-export default function FourtyTwo() {
+export default function EightyThree() {
   return (
     <Dashboard>
       <SceneInterface

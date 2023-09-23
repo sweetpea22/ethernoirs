@@ -1,7 +1,5 @@
-// yes
 import Dashboard from '@/components/Dashboard';
 import GameInterface from '@/components/GameInterface';
-import SceneInterface from '@/components/SceneInterface';
 
 export interface GameMove {
   name: string;
@@ -9,21 +7,16 @@ export interface GameMove {
   number?: number;
 }
 
-
-
-export default function FourtyTwo() {
-  const choiceOptions: GameMove[] = [
-    { name: 'Flee', to: '/38' },
-    { name: 'Fire your gun', to: '/83' },
-  ];
+export default function ThirtyEight() {
+  const choiceOptions: GameMove[] = [{ name: 'Record that', to: '/72' }];
   return (
     <Dashboard>
       <GameInterface
         choiceOptions={choiceOptions}
-        characterImgUrl='/house.png'
-        characterName='Scene 1: Gonna be a long night...'
+        characterImgUrl='/biddy.png'
+        characterName='Biddy'
         dialogue={
-          "The cops tell you to go to Dylan the CTO's house. They wait back while you try to open the door. Suddenly there are shots and they're not coming from the house, the cops are shooting at you. "
+          'Someone lets you inside the house and he was shot, you turn around and blast who shot him. You pull the injured man to safety. His name is Biddy, he operates the exchange in town. He thanks you for saving him and doxxes Thaler to you.  He says his name is Macswain.'
         }
       />
     </Dashboard>
