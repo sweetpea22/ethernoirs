@@ -15,10 +15,11 @@ struct ResponseStruct {
 }
 
 contract Superuser is ERC721Enumerable {
-    uint256 public constant BEAR_START_BLOCK = 6120000;
-    uint256 public constant BEAR_END_BLOCK = 10430000;
-    uint256 public constant NUM_TX_THRESHOLD = 16;
-    address public constant AXIOM_V1_QUERY_MAINNET_ADDR = 0xd617ab7f787adF64C2b5B920c251ea10Cd35a952;
+    // conditions are extremely un-historical due to not having access to an account far back in the future. 
+    uint256 public constant CHECK_START_BLOCK = 9743287;
+    uint256 public constant CHECK_END_BLOCK = 9747915;
+    uint256 public constant NUM_TX_THRESHOLD = 18;
+    address public constant AXIOM_V1_QUERY_GOERLI_ADDR = 0x4Fb202140c5319106F15706b1A69E441c9536306;
 
     /// @notice True if the `account` has already claimed.
     mapping (address => bool) public hasMinted;
@@ -36,8 +37,8 @@ contract Superuser is ERC721Enumerable {
     /// @param axiomResponse The Axiom query response.
     /// @dev Reverts if proof isn't valid, or if the account doesn't meet the conditions to mint.
     function _validateData(ResponseStruct calldata axiomResponse) private view {
-        // Mainnet AxiomV1Query address
-        IAxiomV1Query axiomV1Query = IAxiomV1Query(AXIOM_V1_QUERY_MAINNET_ADDR);
+        // Goerli AxiomV1Query address
+        IAxiomV1Query axiomV1Query = IAxiomV1Query(AXIOM_V1_QUERY_GOERLI_ADDR);
         
         // Check that the responses are valid
         bool valid = axiomV1Query.areResponsesValid(
@@ -69,7 +70,7 @@ contract Superuser is ERC721Enumerable {
         address endAddr = axiomResponse.accountResponses[1].addr;
 
         // Check that the start and end blocks proved match the values set in the contract
-        if (startBlockNumber != BEAR_START_BLOCK || endBlockNumber != BEAR_END_BLOCK) {
+        if (startBlockNumber != CHECK_START_BLOCK || endBlockNumber != CHECK_END_BLOCK) {
             revert InvalidInputError();
         }
 
@@ -113,8 +114,7 @@ contract Superuser is ERC721Enumerable {
     
     // Mints a new NFT to the sender if input validation passes
     hasMinted[_msgSender()] = true;
-    _Pseudorandom(_name); // Creates game token
+    _mintPseudorandom(_name); // Creates game token
   }
-
 
  }
