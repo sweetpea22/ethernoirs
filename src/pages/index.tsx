@@ -8,8 +8,9 @@ import {
 } from 'wagmi';
 import { charsAddress } from '@/contracts';
 import charsAbi from '@/contracts/abi.json';
-import { parseEther, parseGwei } from 'viem';
-import { useState } from 'react';
+import { parseGwei } from 'viem';
+import { useState, useEffect } from 'react';
+import { client, exploreChars } from './api/airstack';
 
 export interface GameMove {
   name: string;
@@ -18,8 +19,31 @@ export interface GameMove {
 }
 
 export default function Home() {
+  // const [NFTs, setNFTs] = useState<any>([]);
+
+  //   useEffect(() => {
+  //     fetchNFTs();
+  //   }, []);
+  //   async function fetchNFTs() {
+  //     try {
+  //       /* fetch NFTs from Lens API */
+  //       let response = await client.query({ query: exploreChars });
+  //       /* return NFTs with profile pics  */
+  //       let charsData = await Promise.all(
+  //         response.data.exploreNFTs.items.filter(async (nftInfo:any) => {
+  //           return nftInfo.picture.__typename === 'MediaSet';
+  //         })
+  //       );
+
+  //       /* update the local state with the NFTs array */
+  //       setNFTs(charsData);
+  //     } catch (err) {
+  //       console.log({ err });
+  //     }
+  //   }
+
   const { address, isConnected } = useAccount();
-  const newBaseUri = 'ipfs://QmVWpT2f3PyZvuVkH8zQB8ahy6TaDFYBYWQcTUHpMuho3v/';
+  const newBaseUri = 'ipfs://QmfLFJuamkNtzSC1XYAFUxLiChVEZzXqRXRB295XVWjcNW/';
   const [amountToMint, setAmountToMint] = useState(6);
 
   const { config } = usePrepareContractWrite({
@@ -38,7 +62,9 @@ export default function Home() {
     write,
   } = useContractWrite(config);
 
-  console.log(setUri);
+  if (isSuccess) {
+    console.log('successfully changed tokenuri to jcNW');
+  }
 
   const { data: mintCharTokenUri, isLoading: tokenUriLoading } =
     useContractRead({

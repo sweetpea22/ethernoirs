@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.4",
     "@axiom-crypto/core": "^0.3.6",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "2.0.18",
