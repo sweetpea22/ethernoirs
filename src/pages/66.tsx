@@ -9,8 +9,8 @@ export interface GameMove {
 
 export default function Sixty() {
   const choiceOptions: GameMove[] = [
-    { name: 'Trust Biddy, record location', to: '/99' },
-    { name: "Don't trust, shoot Dylan", to: '/111' },
+    { name: 'Trust Biddy, record location', to: '99' },
+    { name: "Don't trust, shoot Dylan", to: '111' },
   ];
   return (
     <Dashboard>

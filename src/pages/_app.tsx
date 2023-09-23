@@ -42,7 +42,7 @@ const pixel1 = localFont({
     },
   ],
 });
-const neuebit = localFont({
+export const neuebit = localFont({
   src: [
     {
       path: './fonts/neuebit/NeueBit-Bold.ttf',

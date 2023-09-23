@@ -12,7 +12,7 @@ export default function EightyThree() {
     <Dashboard>
       <SceneInterface
         description='You almost got away, but they got you in the forehead'
-        href='/38'
+        href='/42'
       />
     </Dashboard>
   );

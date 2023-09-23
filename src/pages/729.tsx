@@ -9,8 +9,8 @@ export interface GameMove {
 
 export default function SeventyTwo() {
   const choiceOptions: GameMove[] = [
-    { name: 'Agree with him. Probably nothing.', to: '/66' },
-    { name: "He's sus. Ask him what he knows", to: '/55' },
+    { name: 'Agree with him. Probably nothing.', to: '66' },
+    { name: "He's sus. Ask him what he knows", to: '55' },
   ];
   return (
     <Dashboard>

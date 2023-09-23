@@ -12,7 +12,7 @@ export default function FiftyFive() {
     <Dashboard>
       <SceneInterface
         description='You almost got away, but they got you in the forehead'
-        href='/46'
+        href='46'
       />
     </Dashboard>
   );
