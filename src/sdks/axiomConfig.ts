@@ -1,6 +1,7 @@
 import { Axiom, AxiomConfig } from "@axiom-crypto/core";
 
-require('dotenv').config()
+import "dotenv/config"
+
 
 const config: AxiomConfig = {
   providerUri: process.env.NEXT_PUBLIC_GOERLI_RPC_URL as string,

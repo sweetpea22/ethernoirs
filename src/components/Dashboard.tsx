@@ -1,6 +1,10 @@
 'use client';
+import { shortenAddress } from '@/sdks/axiomConfig';
 import { Disclosure } from '@headlessui/react';
-import { Web3Button } from '@web3modal/react';
+// import { Web3Button } from '@web3modal/react';
+import { useWeb3Modal } from '@web3modal/wagmi/react';
+import { useAccount } from 'wagmi';
+
 
 const navigation = [
   { name: 'Leaderboard', href: '#', current: false },
@@ -15,6 +19,9 @@ function classNames(...classes) {
 }
 
 export default function Dashboard({ children }: any) {
+  const { open: openWallet } = useWeb3Modal();
+  const { address, isConnected } = useAccount();
+  const truncatedAddress = `${address?.slice(0,5)}...${address?.slice(5,0)}`
   return (
     <>
       <div className='min-h-full pb-20'>
@@ -53,7 +60,11 @@ export default function Dashboard({ children }: any) {
                       <div className='md:block ml-4 flex items-center'>
                         {/* Profile dropdown */}
                         <div>
-                          <Web3Button />
+                          {/* <Web3Button /> */}
+                          <span></span>
+                          {!address && (<button className='rounded-lg bg-red-900 text-white py-4 px-4 text-lg font-medium' onClick={() => openWallet({view: 'Account'})}>Connect Wallet</button>)}
+                          
+                          {address && (<button className='rounded-lgbg-red-900 text-white py-4 px-4 text-lg font-medium' onClick={() => openWallet({view: 'Account'})}>{truncatedAddress}</button>)}
                         </div>
                       </div>
                     </div>
@@ -65,7 +76,7 @@ export default function Dashboard({ children }: any) {
           <header className='py-10'>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
               <h1 className='text-3xl font-bold tracking-tight text-white'>
-                neo-neo-noir, Round 1: The Cleansing of Lanny
+                Ethernoir, Round 1: The Cleansing of Lanny
               </h1>
             </div>
           </header>
