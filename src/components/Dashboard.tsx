@@ -18,10 +18,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Dashboard({ children }: any) {
+export default function Dashboard({ children, address }: any) {
   const { open: openWallet } = useWeb3Modal();
-  const { address, isConnected } = useAccount();
-  const truncatedAddress = `${address?.slice(0,5)}...${address?.slice(5,0)}`
+  const { isConnected, isDisconnected } = useAccount();
+  const truncatedAddress = `${address?.slice(0,5)}...${address?.slice(37, -1)}`
   return (
     <>
       <div className='min-h-full pb-20'>
@@ -44,8 +44,8 @@ export default function Dashboard({ children }: any) {
                                 href={item.href}
                                 className={classNames(
                                   item.current
-                                    ? 'bg-red-900 text-white'
-                                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                    ? 'bg-slate-700 text-white'
+                                    : 'text-gray-300 hover:bg-gray-700',
                                   'rounded-md px-3 py-2 text-sm font-medium'
                                 )}
                                 aria-current={
@@ -60,12 +60,12 @@ export default function Dashboard({ children }: any) {
                       <div className='md:block ml-4 flex items-center'>
                         {/* Profile dropdown */}
                         <div>
-                          {/* <Web3Button /> */}
-                          <span></span>
-                          {!address && (<button className='rounded-lg bg-red-900 text-white py-4 px-4 text-lg font-medium' onClick={() => openWallet({view: 'Account'})}>Connect Wallet</button>)}
-                          
-                          {address && (<button className='rounded-lgbg-red-900 text-white py-4 px-4 text-lg font-medium' onClick={() => openWallet({view: 'Account'})}>{truncatedAddress}</button>)}
+
+                          {(isDisconnected) && (<button className='rounded-lg bg-slate-700 text-white py-4 px-4 text-lg  hover:brightness-50 font-medium' onClick={() => openWallet()}>Connect Wallet</button>)}
                         </div>
+                          <div>
+                          {isConnected && (<button className='rounded-lg bg-slate-700 text-white hover:brightness-50 py-4 px-4 text-lg font-medium' onClick={() => openWallet({ view: 'Account' })}>{truncatedAddress || "Loading address.."}</button>)}
+                          </div>
                       </div>
                     </div>
                   </div>

@@ -26,44 +26,9 @@ export default function Home() {
   const { address, isConnected } = useAccount();
   const [amountToMint, setAmountToMint] = useState(6);
 
-  
-  const { config } = usePrepareContractWrite({
-    address: charsAddress as `0x${string}`,
-    abi: charsAbi.abi,
-    functionName: 'setBaseURI',
-    args: [],
-    gas: 1_000_000n,
-    gasPrice: parseGwei('70'),
-  });
-
-  const {
-    data: setUri,
-    isLoading,
-    isSuccess,
-    write,
-  } = useContractWrite(config);
-
-  if (isSuccess) {
-    console.log('successfully changed tokenuri to jcNW');
-  }
-
-  const { data: mintCharTokenUri, isLoading: tokenUriLoading } =
-    useContractRead({
-      address: charsAddress as `0x${string}`,
-      abi: charsAbi.abi,
-      functionName: 'tokenURI',
-      args: ['1'],
-    });
-
-  console.log(mintCharTokenUri);
-
-  const choiceOptions: GameMove[] = [
-    { name: 'Accept the tip and spread the rumor.', to: '/4' },
-    { name: 'Put some $ on it.', to: '/3' },
-  ];
 
   return (
-    <Dashboard>
+    <Dashboard address={address}>
       <SceneInterface
         description="Zach, the tech lead at Lanny Protocol was murdered. But the situation is much worse than it initially seemed. Lanny's CTO Dylan hired blackhats to hack his own employees when they threatened to leave the protocol. Now those blackhats continue to blackmail the CTO. So he hires you to solve the murder, but you plan to expose the corruption so Dylan goes down too. Your objective: Solve who killed Zach or win by a score of 20."
         href='/42'

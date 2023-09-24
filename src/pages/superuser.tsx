@@ -28,8 +28,9 @@ export default function SuperUser({searchParams}: PageProps) {
     <>
       {mounted && ( 
         <>
-        <ConnectWallet addressVerify={searchParams?.address as string ?? ""} />
-        <NonceCheck address={address} />
+          <h1>Hello</h1>
+        {/* <ConnectWallet addressVerify={searchParams?.address as string ?? ""} />
+        <NonceCheck address={address} /> */}
         </>
       )}
     </>

@@ -33,12 +33,12 @@ export default function GameInterface({
           )}
         </div>
         <div className='mt-6 text-center sm:mt-5'>
-          <h3 className='text-2xl font-semibold leading-6 text-gray-100'>
+          <h3 className='text-2xl leading-6 text-gray-100'>
             {characterName}
           </h3>
           <div className='mt-2'>
             <motion.p
-              className='text-2xl text-gray-300'
+              className='text-xl text-gray-300'
               variants={sentenceVariant}
               initial='hidden'
               animate='visible'>

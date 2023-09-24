@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import localFont from 'next/font/local';
+import {Newsreader, Inter_Tight } from 'next/font/google'
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react';
 // import {
 //   EthereumClient,
@@ -55,25 +56,16 @@ const pixel1 = localFont({
     },
   ],
 });
-export const neuebit = localFont({
-  src: [
-    {
-      path: './fonts/neuebit/NeueBit-Bold.ttf',
-      weight: '600',
-      style: 'bold',
-    },
-    {
-      path: './fonts/neuebit/NeueBit-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-});
+
+const newsreader = Newsreader({ subsets: ['latin'] });
+const inter = Inter_Tight({ subsets: ['latin'] });
+
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig config={wagmiConfig}>
-      <main className={pixel1.className}>
+      <main className={inter.className}>
         <Component {...pageProps} />
       </main>
     </WagmiConfig>

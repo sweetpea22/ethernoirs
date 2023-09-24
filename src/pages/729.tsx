@@ -21,6 +21,8 @@ export default function SeventyTwo() {
         dialogue={
           'Dylan meets you and apologizes for the wait. He tells you about the murder - Zach was killed because of his own resistance to the fee switch. '
         }
+        contractInteractionType="choice729"
+        hasContractInteraction
       />
     </Dashboard>
   );
