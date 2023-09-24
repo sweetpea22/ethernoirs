@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.19;
 
-import "../lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
-import "../lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+
 import "./interfaces/IAxiomV1Query.sol";
 
 struct ResponseStruct {
@@ -15,6 +16,10 @@ struct ResponseStruct {
 }
 
 contract Superuser is ERC721Enumerable {
+    // define token 
+	uint256 public currentTokenId;
+
+
     // conditions are extremely un-historical due to not having access to an account far back in the future. 
     uint256 public constant CHECK_START_BLOCK = 9743287;
     uint256 public constant CHECK_END_BLOCK = 9747915;
@@ -88,33 +93,30 @@ contract Superuser is ERC721Enumerable {
         }
     }
 
-    function _mintPseudorandom(string memory _name) internal returns (GameToken memory) {
-
-    // pseudo randomness :( sowwy )
-    uint8 randId = uint8(uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender))) % 100);
-    randId = randId % 3;
-    if (randId == 0) {
-      randId++;
+    function setBaseURI(string memory _newBaseURI) public onlyOwner {
+        baseURI = _newBaseURI;
     }
 
-    _mint(msg.sender, randId, 1, '0x0');
-    totalSupply++;
-  }
 
-  function mintNewEvidence(ResponseStruct calldata response) external {
-    if (hasMinted[_msgSender()]) {
-        revert AlreadyClaimedError();
+    function mintToMulti(address _to, uint256 _count) public returns (uint256) {
+        uint256 startId = currentTokenId;
+
+        // Validates the incoming ResponseStruct
+        _validateData(response);
+    
+        // commented out for demo
+
+        // require(isPlayer(msg.sender), "Please Register Player First"); // Check that this is somone playing the game.
+        
+        // Mints a new NFT to the sender if input validation passes
+        // commented out for demo purposes
+        // hasMinted[_msgSender()] = true;
+
+        for (uint256 i = 0; i < _count; i++) {
+            _safeMint(_to, startId + i);
+        }
+        
+        currentTokenId += _count;
+        return startId;
     }
-
-    // Validates the incoming ResponseStruct
-    _validateData(response);
-  
-    
-    require(isPlayer(msg.sender), "Please Register Player First"); // Check that this is somone playing the game.
-    
-    // Mints a new NFT to the sender if input validation passes
-    hasMinted[_msgSender()] = true;
-    _mintPseudorandom(_name); // Creates game token
-  }
-
- }
+}
