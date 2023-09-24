@@ -1,1 +1,0 @@
-export const charsAddress = "0xbecd45b8b1a6f14cab0b2b5665c3c91b2e7c1074";
