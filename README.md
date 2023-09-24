@@ -38,6 +38,6 @@ It features:
 [Base Goerli](https://goerli.basescan.org/address/0xA8Ed3851F5A6D9782EB5604C89e46BABe98E6706)
 
 - A verifier contract for the zkp.
-[Goerli] (https://goerli.etherscan.io/address/0x2658FB8C711CD23e66E50b83e9Aec3E03803A562)
+[Goerli](https://goerli.etherscan.io/address/0x2658FB8C711CD23e66E50b83e9Aec3E03803A562)
 [Base Goerli](https://goerli.basescan.org/address/0xCb58a793d91eFEd4c97B1bEFAb43C8d960dCA194)
 
