@@ -5,12 +5,11 @@ export default function CustomBtn({
   classNames,
   name,
   imgClassNames,
-  href = '/',
+  href
 }: any) {
   return (
     <Link
       href={href}
-      as="button"
       className={`relative flex-col items-center hover:brightness-50 ${classNames}`}>
       {' '}
       <img
