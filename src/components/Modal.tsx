@@ -16,8 +16,6 @@ export default function Modal() {
   const [voteWay, setVoteWay] = useState('1');
   const cancelButtonRef = useRef(null);
 
-  const []
-
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -59,37 +57,16 @@ export default function Modal() {
                     <Dialog.Title
                       as='h3'
                       className='text-base font-semibold leading-6 text-gray-900'>
-                      Verif
+                      Check if you have Super powers
                     </Dialog.Title>
                     <div className='mt-2'>
-                      <p className='text-md text-gray-500'>
-                        Ver
-                      </p>
+
                     </div>
                   </div>
                 </div>
                 <div className='mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3'>
-                  <button
-                    type='button'
-                    className={`${
-                      isLoading ? 'bg-red-300' : 'bg-red-900'
-                    } inline-flex w-full justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 sm:col-start-2`}
-                    //@ts-ignore
-                    onClick={handleYesClick}>
-                    Generate Proof
-                  </button>
                 </div>
-                (
-                {isLoading && (
-                  <p className='text-center text-black text-lg'>
-                    Transaction submitted, please check{' '}
-                    <a
-                      href='https://testnet.axelarscan.io/gmp/search'
-                      className='font-bold text-md text-red-700'></a>
-                    AxelarScan!
-                  </p>
-                )}
-                )
+
               </Dialog.Panel>
             </Transition.Child>
           </div>

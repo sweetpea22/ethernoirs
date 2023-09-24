@@ -6,7 +6,7 @@ const CONTRACT_NETWORK = "11155111";
 
 
 
-const ZKExample: React.FC = () => {
+export default function SnarkProof()  {
     const [response, setResponse] = useState('');
     const [a, setA] = useState('');
     const [b, setB] = useState('');
@@ -116,5 +116,3 @@ const ZKExample: React.FC = () => {
         </>
     );
 }
-
-export default ZKExample;

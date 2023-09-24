@@ -64,7 +64,7 @@ export default function Dashboard({ children, address }: any) {
                           {(isDisconnected) && (<button className='rounded-lg bg-slate-700 text-white py-4 px-4 text-lg  hover:brightness-50 font-medium' onClick={() => openWallet()}>Connect Wallet</button>)}
                         </div>
                           <div>
-                          {isConnected && (<button className='rounded-lg bg-slate-700 text-white hover:brightness-50 py-4 px-4 text-lg font-medium' onClick={() => openWallet({ view: 'Account' })}>{truncatedAddress || "Loading address.."}</button>)}
+                          {isConnected && (<button className='rounded-lg bg-slate-700 text-white hover:brightness-50 py-4 px-4 text-lg font-medium' onClick={() => openWallet()}>{truncatedAddress || "Loading address.."}</button>)}
                           </div>
                       </div>
                     </div>

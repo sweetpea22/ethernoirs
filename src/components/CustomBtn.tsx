@@ -1,14 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 export default function CustomBtn({
   imageUrl,
   classNames,
   name,
   imgClassNames,
-  disabled = false,
+  href = '/',
 }: any) {
   return (
-    <button
-      disabled={disabled}
+    <Link
+      href={href}
+      as="button"
       className={`relative flex-col items-center hover:brightness-50 ${classNames}`}>
       {' '}
       <img
@@ -17,6 +19,6 @@ export default function CustomBtn({
         alt='icon'
       />
       <p className='text-lg text-white'>{name}</p>
-    </button>
+    </Link>
   );
 }
