@@ -6,7 +6,9 @@ EtherNoirs is a text-based, on-chain, multi-player strategy game, where players 
 The intent of this project is to explore how the evolving smart contract, ZK & NFT standards will change how we play games. This game is inspired by the aspect of darkforest that enabled permissionless story-building and trading of information.
 
 ### Technical Details
-EtherNoirs is a fully on-chain game. It features: 
+EtherNoirs is pretty much fully on-chain. 
+
+It features: 
 - The front-end is built in Typescript, Tailwind and Nextjs.
 - Each NPC is a ERC-6551 Tokenbound account in possession of alibis and information (1155s). 
 - Every move in the game in recorded on-chain to funnel into a leaderboard, this is the multiplayer component. 
