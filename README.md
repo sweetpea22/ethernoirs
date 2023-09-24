@@ -16,6 +16,14 @@ It features:
 - To ensure fairness, I used the snarkjs library and circom compiler to create a circuit and use snark proofs to verify that a player has correctly deduced the murderer, without revealing it to others. 
 - Web3Modal v3 is used to handle Auth. -Deployed a subgraph to index the NFTs, but didn't have much luck querying what I wanted. Def a skill issue on my part, not theGraph. -All nft metadata is uploaded to IPFS via Pinata <3
 
+### How to run it 
+
+1. Clone it `git clone`
+2. Install dependencies `npm i`
+3. Start web server `npm run dev`
+
+
+
 5 contracts were written for this project: 
 - A 721 contract to mint NPCs. I used tokenbound.org to turn them into ERC-6551 smart contract wallets
 [Goerli](https://goerli.etherscan.io/address/0xcd844945c5a130A20a8DAd6FD7141D7654c49218)
