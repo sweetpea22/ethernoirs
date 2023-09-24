@@ -14,6 +14,7 @@ const GOERLI_RPC_URL =
   process.env.GOERLI_RPC_URL ||
   'https://eth-sepolia.g.alchemy.com/v2/YOUR-API-KEY';
 const PRIVATE_KEY = process.env.PRIVATE_KEY || 'privateKey';
+const MANTLE_PRIVATE_KEY = process.env.MANTLE_PRIVATE_KEY || 'privateKey';
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || '';
 
 const config: HardhatUserConfig = {
@@ -40,16 +41,16 @@ const config: HardhatUserConfig = {
       chainId: 10200,
     
     },
-    scrollSepolia: {
+    scroll_sepolia_testnet: {
       url: "https://rpc.ankr.com/scroll_sepolia_testnet",
       gasPrice: 1000000000,
       accounts: [PRIVATE_KEY],
-      chainId: 10200,
+      chainId: 534351,
     },
     mantleTestnet: {
       url: "https://rpc.testnet.mantle.xyz/",
       gasPrice: 1000000000,
-      accounts: [PRIVATE_KEY],
+      accounts: [MANTLE_PRIVATE_KEY],
       chainId: 5001,
     },
     baseGoerli: {
