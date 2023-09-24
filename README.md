@@ -1,4 +1,6 @@
 # Ethernoirs
+|<img width="700" alt="Screen Shot 2023-09-24 at 8 30 28 AM" src="https://github.com/sweetpea22/ethernoirs/assets/47398578/edebec46-ff89-4411-b9b8-e5524fb45105"> |  <img width="700" alt="Screen Shot 2023-09-24 at 8 36 43 AM" src="https://github.com/sweetpea22/ethernoirs/assets/47398578/d04e0120-e016-4b38-bd54-845dcac76b7b"> |
+|-|-|
 
 EtherNoirs is a text-based, on-chain, multi-player strategy game, where players must interact with NPCs and find evidence to complete their objective. The story goes, a shady protocol hires blackhats to aggressively increase their power, only to have it ruled by blackhat mafiosos a month later. You are hired by the protocol to identify the killer and turn these mafias against each other with logic and cunning.
 
