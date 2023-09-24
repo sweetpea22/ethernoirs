@@ -33,7 +33,7 @@ export default function SnarkProof()  {
 
           const { proof, publicSignals } =
             //@ts-ignore
-            await window.snarkjs.groth16.fullProve(signals, "/assets/product.wasm", "/assets/product_0001.zkey");
+            await window.snarkjs.groth16.fullProve(signals, "/product.wasm", "/product_0001.zkey");
 
             console.log(JSON.stringify(proof, null, 1));
 

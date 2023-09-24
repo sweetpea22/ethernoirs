@@ -5,13 +5,11 @@ import { letterVariant, sentenceVariant } from '@/styles/animations';
 import CustomBtn from './CustomBtn';
 import { useAccount } from 'wagmi';
 import { largeButtonStyles } from '@/styles/styles';
-import Link from 'next/link';
 
 export default function SuperUserDo() {
   const sentenceToSplit = `Superusers can add entropy to the game and extend the story. All you have to do is prove that your wallet has transactions from NFT cannon events.`;
   const split = sentenceToSplit.split(' ');
 
-  const {address} = useAccount()
 
   return (
     <div className='flex'>
@@ -44,9 +42,9 @@ export default function SuperUserDo() {
           alternate evidence, add a new character or more!{' '}
         </h3>
         <div className='flex flex-col gap-x-4 my-6'>
-           <Link className={`${largeButtonStyles} mt-6`} href='/'>
+           <button className={`${largeButtonStyles} mt-6`} onClick={() => {}}>
         Generate Proof
-      </Link>
+      </button>
         </div>
         <div className='h-[50%] flex justify-center items-end gap-x-5 '>
           <CustomBtn

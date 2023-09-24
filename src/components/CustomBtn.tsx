@@ -11,7 +11,6 @@ export default function CustomBtn({
     <Link
       href={href}
       className={`relative flex-col items-center hover:brightness-50 ${classNames}`}>
-      {' '}
       <img
         src={imageUrl}
         className={`min-h-[90px] ${imgClassNames}`}

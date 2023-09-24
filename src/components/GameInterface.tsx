@@ -76,27 +76,27 @@ export default function GameInterface({
             name='Inventory'
             imageUrl='/book.png'
             imgClassNames='w-[80px]'
-                        href="/740"
+            href="740"
 
           />
           <CustomBtn
             name='Solve'
             imageUrl='/pin.png'
             imgClassNames='w-[80px]'
-            href="/740"
+            href="740"
           />
           <CustomBtn
             name='Superusers'
             imageUrl='/lookup.png'
             imgClassNames='w-[80px]'
-            href='/superuser'
+            href='superuser'
           />
           <CustomBtn
             disabled
             name='History'
             imageUrl='/sheet.png'
             imgClassNames='w-[80px]'
-                        href="/740"
+            href="740"
 
           />
         </div>
