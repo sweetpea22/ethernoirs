@@ -76,6 +76,8 @@ export default function GameInterface({
             name='Inventory'
             imageUrl='/book.png'
             imgClassNames='w-[80px]'
+                        href="/740"
+
           />
           <CustomBtn
             name='Solve'
@@ -94,6 +96,8 @@ export default function GameInterface({
             name='History'
             imageUrl='/sheet.png'
             imgClassNames='w-[80px]'
+                        href="/740"
+
           />
         </div>
       </div>
