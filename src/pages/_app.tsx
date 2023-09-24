@@ -16,7 +16,7 @@ import {
   baseGoerli,
 } from 'wagmi/chains';
 
-const chains = [goerli, gnosisChiado, mantleTestnet, baseGoerli];
+const chains = [goerli];
 const projectId = '254cd962c673dce7b6230a37d69ad80b';
 
 
