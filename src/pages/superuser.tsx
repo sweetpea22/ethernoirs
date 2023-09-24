@@ -21,18 +21,10 @@ interface SearchParams {
 
 export default function SuperUser({searchParams}: PageProps) {
   const { address } = useAccount();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
   
   return (
     <>
-      {mounted && ( 
-        <>
-          <h1>Hello</h1>
-        {/* <ConnectWallet addressVerify={searchParams?.address as string ?? ""} />
-        <NonceCheck address={address} /> */}
-        </>
-      )}
+        {/* <NonceCheck address={address} /> */}
     </>
   );
 }

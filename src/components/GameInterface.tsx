@@ -81,12 +81,13 @@ export default function GameInterface({
             name='Solve'
             imageUrl='/pin.png'
             imgClassNames='w-[80px]'
-            href="/7"
+            href="/740"
           />
           <CustomBtn
             name='Superusers'
             imageUrl='/lookup.png'
             imgClassNames='w-[80px]'
+            href='/superuser'
           />
           <CustomBtn
             disabled
