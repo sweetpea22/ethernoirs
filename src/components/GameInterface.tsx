@@ -96,7 +96,7 @@ export default function GameInterface({
             name='History'
             imageUrl='/sheet.png'
             imgClassNames='w-[80px]'
-            href="740"
+            href="superuser"
 
           />
         </div>

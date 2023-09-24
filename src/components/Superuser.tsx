@@ -51,23 +51,27 @@ export default function SuperUserDo() {
             name='Inventory'
             imageUrl='/book.png'
             imgClassNames='w-[80px]'
+            href="740"
           />
           <CustomBtn
             name='Solve'
             imageUrl='/pin.png'
             imgClassNames='w-[80px]'
+            href="740"
           />
           <CustomBtn
             name='Superusers'
             imageUrl='/lookup.png'
             imgClassNames='w-[80px]'
             disabled
+            href="superuser"
           />
           <CustomBtn
             disabled
             name='History'
             imageUrl='/sheet.png'
             imgClassNames='w-[80px]'
+            href="superuser"
           />
         </div>
       </div>
