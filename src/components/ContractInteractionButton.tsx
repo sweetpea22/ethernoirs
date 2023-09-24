@@ -159,6 +159,7 @@ export default function ContractInteractionButton({ type }: any) {
           )} Save the information.
         </button>
         {mint66Loading && (
+          <>
           <p className='mt-2 text-left text-white text-lg'>
             Confirm in your wallet, then please check{' '}
             <a
@@ -166,6 +167,8 @@ export default function ContractInteractionButton({ type }: any) {
               className='font-bold text-md text-gray-600'>
               Etherscan!</a>
           </p>
+             <Link
+              type='button' className='relative inline-flex items-center max-w-[80%] rounded-lg bg-gray-600 px-8 py-4 my-3 text-xl font-semibold text-gray-200 ring-1 ring-inset ring-red-00 hover:bg-gray-800' href='99'>Continue</Link></>
         )}
       </div>
     )

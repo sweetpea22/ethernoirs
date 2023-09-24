@@ -3,14 +3,11 @@ import { useState, Fragment } from 'react';
 import { motion } from 'framer-motion';
 import { letterVariant, sentenceVariant } from '@/styles/animations';
 import CustomBtn from './CustomBtn';
-import { GameMove } from '@/pages';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import MintButton from './Superuser/MintSpecialItemButton';
-import NonceCheck from './Superuser/NonceCheck';
 import { useAccount } from 'wagmi';
+import { largeButtonStyles } from '@/styles/styles';
+import Link from 'next/link';
 
-export default function SuperUser() {
+export default function SuperUserDo() {
   const sentenceToSplit = `Superusers can add entropy to the game and extend the story. All you have to do is prove that your wallet has transactions from NFT cannon events.`;
   const split = sentenceToSplit.split(' ');
 
@@ -47,7 +44,9 @@ export default function SuperUser() {
           alternate evidence, add a new character or more!{' '}
         </h3>
         <div className='flex flex-col gap-x-4 my-6'>
-          
+           <Link className={`${largeButtonStyles} mt-6`} href='/'>
+        Generate Proof
+      </Link>
         </div>
         <div className='h-[50%] flex justify-center items-end gap-x-5 '>
           <CustomBtn

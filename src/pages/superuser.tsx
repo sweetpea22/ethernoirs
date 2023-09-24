@@ -1,30 +1,18 @@
 import Dashboard from '@/components/Dashboard';
-import GameInterface from '@/components/GameInterface';
-import NonceCheck from '@/components/Superuser/NonceCheck';
 import { useAccount } from 'wagmi';
-import ConnectWallet from '@/components/Superuser/ConnectWallet';
 import { useState, useEffect } from 'react';
-
-interface PageProps {
-  params: Params;
-  searchParams: SearchParams;
-}
-
-interface Params {
-  slug: string;
-}
-
-interface SearchParams {
-  [key: string]: string | undefined;
-}
+import SuperUserDo from '@/components/Superuser';
 
 
-export default function SuperUser({searchParams}: PageProps) {
-  const { address } = useAccount();
+
+
+export default function SuperUser() {
   
   return (
     <>
-        {/* <NonceCheck address={address} /> */}
+    <Dashboard>
+      <SuperUserDo />
+    </Dashboard>
     </>
   );
 }

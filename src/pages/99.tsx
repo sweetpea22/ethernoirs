@@ -9,8 +9,8 @@ export interface GameMove {
 
 export default function NinetyNine() {
   const choiceOptions: GameMove[] = [
-    { name: 'Suspect Someone', to: '740' },
-    { name: 'Inspect Proof', to: '900' },
+    { name: 'I know who did it! Proceed to Solve', to: '740' },
+    { name: 'Keep the story going - Superuser do', to: 'superuser' },
   ];
   return (
     <Dashboard>
