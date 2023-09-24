@@ -75,23 +75,22 @@ export default function SnarkProof()  {
 
     return (
       <>
-        <div className="rounded-md px-3 pb-1.5 pt-2.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
-          <label htmlFor="name" className="block text-xs font-medium text-gray-900">
+        <div className="rounded-md p-5 shadow-sm focus-within:ring-">
+          <label htmlFor="name" className="block text-lg font-medium text-gray-500 bg-gray-200">
             Input A 
         </label>
         <input
           type="number"
           name="Input A"
           id="A"
-            className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+            className="block w-full border-0 p-5 text-gray-500 bg-gray-200 placeholder:text-gray-400 focus:ring-0 text-lg sm:leading-6"
               //@ts-ignore
-            value={(e: any) => setB(e.target.value)}
             onKeyUp={(e: any) => setB(e.target.value)}
           placeholder="0123"
         />
         </div>
-        <div className="rounded-md px-3 pb-1.5 pt-2.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
-          <label htmlFor="Input B" className="block text-xs font-medium text-gray-900">
+        <div className="rounded-md p-5 shadow-sm focus-within:ring-2">
+          <label htmlFor="Input B" className="block text-lg font-medium text-gray-500 bg-gray-200">
             Input B
         </label>
         <input
@@ -99,9 +98,9 @@ export default function SnarkProof()  {
           name="b"
             id="b"
             //@ts-ignore
-            value={(e: any) => setB(e.target.value)}
+           
             onKeyUp={(e: any) => setB(e.target.value)}
-          className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+          className="block w-full border-0 p-5 text-gray-500 bg-gray-200 placeholder:text-gray-400 focus:ring-0 text-lg sm:leading-6"
           placeholder="0123"
         />
         </div>

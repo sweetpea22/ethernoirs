@@ -5,20 +5,9 @@ import {Newsreader, Inter_Tight } from 'next/font/google'
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react';
 import { useEffect, useState } from "react";
 
-export const HydrationProvider = ({children} :any) => {
-const [isMounted, setIsMounted] = useState(false);
-
-useEffect(() => {
-setIsMounted(true);
-}, []);
-
-if (!isMounted) {
-return null;
-}
-};
 
 
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import {WagmiConfig } from 'wagmi';
 
 import {
   goerli,
@@ -46,14 +35,22 @@ const inter = Inter_Tight({ subsets: ['latin'] });
 
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+  setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
-    <HydrationProvider>
     <WagmiConfig config={wagmiConfig}>
       <main className={inter.className}>
         <Component {...pageProps} />
         </main>
         
     </WagmiConfig>
-    </HydrationProvider>
   );
 }

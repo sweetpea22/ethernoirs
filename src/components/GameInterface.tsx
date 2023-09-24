@@ -81,6 +81,7 @@ export default function GameInterface({
             name='Solve'
             imageUrl='/pin.png'
             imgClassNames='w-[80px]'
+            href="/7"
           />
           <CustomBtn
             name='Superusers'

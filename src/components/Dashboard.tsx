@@ -18,9 +18,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Dashboard({ children, address }: any) {
+export default function Dashboard({ children}: any) {
   const { open: openWallet } = useWeb3Modal();
-  const { isConnected, isDisconnected } = useAccount();
+  const { address, isConnected, isDisconnected } = useAccount();
   const truncatedAddress = `${address?.slice(0,5)}...${address?.slice(37, -1)}`
   return (
     <>
