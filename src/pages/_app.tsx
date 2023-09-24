@@ -11,13 +11,12 @@ import {WagmiConfig } from 'wagmi';
 
 import {
   goerli,
-  scrollSepolia,
   gnosisChiado,
   mantleTestnet,
   baseGoerli,
 } from 'wagmi/chains';
 
-const chains = [goerli, scrollSepolia, gnosisChiado, mantleTestnet, baseGoerli];
+const chains = [goerli, gnosisChiado, mantleTestnet, baseGoerli];
 const projectId = '254cd962c673dce7b6230a37d69ad80b';
 
 
